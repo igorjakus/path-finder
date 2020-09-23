@@ -1,8 +1,8 @@
 from scheme import Scheme
 from node import Node
 
-start = Scheme.start
-end = Scheme.end
+start = Scheme().start
+end = Scheme().end
 
 
 class A_Star:
@@ -51,7 +51,8 @@ class A_Star:
         moves = [(1, 0), (-1, 0), (0, 1), (0, -1)]
         return [self.moved_position(position, move) for move in moves]
 
-    def moved_position(self, pos, move):
+    @staticmethod
+    def moved_position(pos, move):
         # Return moved position (sum of two tuples)
         return tuple(pos + move for pos, move in zip(pos, move))
 

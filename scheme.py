@@ -15,7 +15,7 @@ class Scheme:
         with open('map.txt') as f:
             for line in f:
                 self.map.append(line[:-1])
-    
+
     def find(self, wanted):
         # Find the position of one thing you are looking for
         for x in range(0, len(self.map) - 1):
